@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+/*redux imports*/
+import { Provider } from 'react-redux'; // provider to connect react with redux 
+import storeFn from './redux/index';    //  main store configured and prepared for use
+
+const store = storeFn();
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
